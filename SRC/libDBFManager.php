@@ -94,7 +94,7 @@ function fnSqlFManagerInsert($fMNo, $name, $room, $note, $del)
 function fnSqlFManagerDelete($fMNo)
 {
 	$sql  = "UPDATE TBLFM";
-	$sql .= " SET DEL = 0";
+	$sql .= " SET DEL = -1";
 	$sql .= ",UPDT = CURRENT_TIMESTAMP";
 	$sql .= " WHERE FMNO = '$fMNo'";
 
@@ -200,7 +200,7 @@ function fnSqlFManagerViewInsert($pdfNo, $fMNo, $docNo, $note)
 function fnSqlFManagerViewDelete($pdfNo)
 {
 	$sql  = "UPDATE TBLPDF";
-	$sql .= " SET DEL = 0";
+	$sql .= " SET DEL = -1";
 	$sql .= ",UPDT = CURRENT_TIMESTAMP";
 	$sql .= " WHERE PDFNO = '$pdfNo'";
 
